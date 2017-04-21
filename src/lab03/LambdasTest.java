@@ -29,16 +29,22 @@ public class LambdasTest {
 
 
 
-        out.println("Lab 02");
-        LambdasTest obj = new LambdasTest();
-        obj.callI1(3, a -> out.println(a * a));
-        obj.callI1(3, out::println);
+        out.println("Lab 03");
+        Interface1 i1 = (a) -> out.println(a * a);
+        i1.foo(3);
 
+        Interface2 i2 = (a) -> a * a;
+        i2.printSquare(10);
 
-        obj.callI2(3, a -> a*a);
-        obj.callI2(3, obj::square);
+        out.println(Interface3.getAxB2(3, 5));
 
-
+        Interface4 i4 = new Interface4() {
+            @Override
+            public double getPi() {
+                return Math.PI;
+            }
+        };
+        out.println(i4.getPi());
     }
 
 
